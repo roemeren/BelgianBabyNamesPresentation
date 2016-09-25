@@ -19,6 +19,8 @@ knit        : slidify::knit2slides
     - Beers
 - But what do you know about Belgian... *data?*
 - Goal of this Shiny app: analyze *popular Belgian baby names*!
+- [Link to github repository](http://github.com/roemeren/BelgianBabyNames) 
+containing `ui.R` and `server.R`
 
 --- .class #id 
 
