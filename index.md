@@ -13,7 +13,7 @@ knit        : slidify::knit2slides
 
 ## Belgium
 
-- Known for its famous Belgian
+- Known for its famous
     - Fries
     - Chocolates
     - Beers
@@ -22,35 +22,30 @@ knit        : slidify::knit2slides
 
 --- .class #id 
 
-## Some facts about Belgium
-- Divided into 3 regions
-    - Flemish Region (6.5M inhabitants, languages: Dutch)
+## Some facts
+- Three regions in Belgium
+    - Flemish Region (6.5M inhabitants, language: Dutch)
     - Walloon Region (3.6M inhabitants, languages: 98% French, 2% German)
     - Brussels-Capital Region (1.2M inhabitants, languages: 80% French, 20% Dutch)
 - Statistics Belgium: http://statbel.fgov.be/ (open data)
     - Population statistics: births, buildings counts, ...
     - Labour market: incomes, education,...
-    - Economy: consumer prices, agriculture, ...
-    - Other categories: Transport, Environment, Energy
+    - Other categories: Economy, Transport, Environment, Energy
+- We'll use the [First names of newborns 1995-2015](http://statbel.fgov.be/nl/modules/publications/statistiques/bevolking/bevolking_-_voornamen_van_de_pasgeborenen_1995-2014.jsp) dataset (2 Excel files)
 
 --- .class #id 
 
-## The data we'll use
-- [First names of newborns 1995-2015](http://statbel.fgov.be/nl/modules/publications/statistiques/bevolking/bevolking_-_voornamen_van_de_pasgeborenen_1995-2014.jsp)
-- Set of 2 Excel files: boy name and girl name counts
-    - split per year (period: 1995-2015), and
-    - split per region (Flanders, Wallonia, Brussels)
-
-
---- .class #id 
-
-## Features of the application
-- Tab 1: top 10/20 baby names for given gender/region/period
-- Tab 2: statistics for a particular baby name
-    - specify a search term and a list of 15 name matches is returned based on 
-    a string distance calculation (see next slide)
+## About the application
+- Input datasets after preprocessing (csv)
+    - boy name stats per region & year
+    - girl name stats per region & year
+    - list of unique boy/girl names
+- Feature 1: top 10/20 baby names for given gender/region/period
+- Feature 2: statistics for a particular baby name
+    - name suggestions based on a search term and a string distance calculation
+    (see next slide)
     - statistic 1: number of newborns per year
-    - statistic 2: 'popularity score' of name (see next slide)
+    - statistic 2: 'popularity score' of a name (see next slide)
 
 --- .class #id 
 

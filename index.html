@@ -47,7 +47,7 @@
   </hgroup>
   <article data-timings="">
     <ul>
-<li>Known for its famous Belgian
+<li>Known for its famous
 
 <ul>
 <li>Fries</li>
@@ -64,14 +64,14 @@
 
 <slide class="class" id="id" style="background:;">
   <hgroup>
-    <h2>Some facts about Belgium</h2>
+    <h2>Some facts</h2>
   </hgroup>
   <article data-timings="">
     <ul>
-<li>Divided into 3 regions
+<li>Three regions in Belgium
 
 <ul>
-<li>Flemish Region (6.5M inhabitants, languages: Dutch)</li>
+<li>Flemish Region (6.5M inhabitants, language: Dutch)</li>
 <li>Walloon Region (3.6M inhabitants, languages: 98% French, 2% German)</li>
 <li>Brussels-Capital Region (1.2M inhabitants, languages: 80% French, 20% Dutch)</li>
 </ul></li>
@@ -80,9 +80,9 @@
 <ul>
 <li>Population statistics: births, buildings counts, ...</li>
 <li>Labour market: incomes, education,...</li>
-<li>Economy: consumer prices, agriculture, ...</li>
-<li>Other categories: Transport, Environment, Energy</li>
+<li>Other categories: Economy, Transport, Environment, Energy</li>
 </ul></li>
+<li>We&#39;ll use the <a href="http://statbel.fgov.be/nl/modules/publications/statistiques/bevolking/bevolking_-_voornamen_van_de_pasgeborenen_1995-2014.jsp">First names of newborns 1995-2015</a> dataset (2 Excel files)</li>
 </ul>
 
   </article>
@@ -91,37 +91,25 @@
 
 <slide class="class" id="id" style="background:;">
   <hgroup>
-    <h2>The data we&#39;ll use</h2>
+    <h2>About the application</h2>
   </hgroup>
   <article data-timings="">
     <ul>
-<li><a href="http://statbel.fgov.be/nl/modules/publications/statistiques/bevolking/bevolking_-_voornamen_van_de_pasgeborenen_1995-2014.jsp">First names of newborns 1995-2015</a></li>
-<li>Set of 2 Excel files: boy name and girl name counts
+<li>Input datasets after preprocessing (csv)
 
 <ul>
-<li>split per year (period: 1995-2015), and</li>
-<li>split per region (Flanders, Wallonia, Brussels)</li>
+<li>boy name stats per region &amp; year</li>
+<li>girl name stats per region &amp; year</li>
+<li>list of unique boy/girl names</li>
 </ul></li>
-</ul>
-
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-<slide class="class" id="id" style="background:;">
-  <hgroup>
-    <h2>Features of the application</h2>
-  </hgroup>
-  <article data-timings="">
-    <ul>
-<li>Tab 1: top 10/20 baby names for given gender/region/period</li>
-<li>Tab 2: statistics for a particular baby name
+<li>Feature 1: top 10/20 baby names for given gender/region/period</li>
+<li>Feature 2: statistics for a particular baby name
 
 <ul>
-<li>specify a search term and a list of 15 name matches is returned based on 
-a string distance calculation (see next slide)</li>
+<li>name suggestions based on a search term and a string distance calculation
+(see next slide)</li>
 <li>statistic 1: number of newborns per year</li>
-<li>statistic 2: &#39;popularity score&#39; of name (see next slide)</li>
+<li>statistic 2: &#39;popularity score&#39; of a name (see next slide)</li>
 </ul></li>
 </ul>
 
@@ -171,26 +159,20 @@ popularity &lt;- round(100*(maxOrder - nameOrder + 1)/maxOrder, 1); popularity
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=2 title='Some facts about Belgium'>
+        data-slide=2 title='Some facts'>
          2
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=3 title='The data we&#39;ll use'>
+        data-slide=3 title='About the application'>
          3
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=4 title='Features of the application'>
+        data-slide=4 title='Some specifics'>
          4
-      </a>
-    </li>
-    <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=5 title='Some specifics'>
-         5
       </a>
     </li>
   </ul>
