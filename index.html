@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Belgian Baby Names Shiny App</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Belgian Baby Names Shiny App">
+  <meta name="author" content="">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Belgian Baby Names Shiny App</h1>
+    <h2>Coursera Developing Data Products Course Project</h2>
+    <p><br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Belgium</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Known for its famous Belgian
+
+<ul>
+<li>Fries</li>
+<li>Chocolates</li>
+<li>Beers</li>
+</ul></li>
+<li>But what do you know about Belgian... <em>data?</em></li>
+<li>Goal of this Shiny app: analyze <em>popular Belgian baby names</em>!</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Some facts about Belgium</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Divided into 3 regions
+
+<ul>
+<li>Flemish Region (6.5M inhabitants, languages: Dutch)</li>
+<li>Walloon Region (3.6M inhabitants, languages: 98% French, 2% German)</li>
+<li>Brussels-Capital Region (1.2M inhabitants, languages: 80% French, 20% Dutch)</li>
+</ul></li>
+<li>Statistics Belgium: <a href="http://statbel.fgov.be/">http://statbel.fgov.be/</a> (open data)
+
+<ul>
+<li>Population statistics: births, buildings counts, ...</li>
+<li>Labour market: incomes, education,...</li>
+<li>Economy: consumer prices, agriculture, ...</li>
+<li>Other categories: Transport, Environment, Energy</li>
+</ul></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>The data we&#39;ll use</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><a href="http://statbel.fgov.be/nl/modules/publications/statistiques/bevolking/bevolking_-_voornamen_van_de_pasgeborenen_1995-2014.jsp">First names of newborns 1995-2015</a></li>
+<li>Set of 2 Excel files: boy name and girl name counts
+
+<ul>
+<li>split per year (period: 1995-2015), and</li>
+<li>split per region (Flanders, Wallonia, Brussels)</li>
+</ul></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Features of the application</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Tab 1: top 10/20 baby names for given gender/region/period</li>
+<li>Tab 2: statistics for a particular baby name
+
+<ul>
+<li>specify a search term and a list of 15 name matches is returned based on 
+a string distance calculation (see next slide)</li>
+<li>statistic 1: number of newborns per year</li>
+<li>statistic 2: &#39;popularity score&#39; of name (see next slide)</li>
+</ul></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Some specifics</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Finding baby names based on a search term: Levenshtein distance</h3>
+
+<pre><code class="r">searchTerm &lt;- &quot;John&quot;
+exampleNames &lt;- c(&quot;Robert&quot;, &quot;John&quot;, &quot;Johnny&quot;, &quot;Johannes&quot;, &quot;Johan&quot;, &quot;Sulayman&quot;)
+as.vector(adist(&quot;John&quot;, exampleNames)) # John (2) and Johan (5) are best matches
+</code></pre>
+
+<pre><code>## [1] 5 0 2 4 1 7
+</code></pre>
+
+<h3>Popularity score of a name</h3>
+
+<pre><code class="r"># Example: list of 15 names for which we calculate the popularity score of the
+# name with the 3rd highest count value (i.e. order of 3)
+maxOrder &lt;- 15; nameOrder &lt;- 3; 
+popularity &lt;- round(100*(maxOrder - nameOrder + 1)/maxOrder, 1); popularity
+</code></pre>
+
+<pre><code>## [1] 86.7
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Belgium'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Some facts about Belgium'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='The data we&#39;ll use'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Features of the application'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Some specifics'>
+         5
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
