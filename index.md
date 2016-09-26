@@ -40,8 +40,9 @@ knit        : slidify::knit2slides
     - boy name stats per region & year
     - girl name stats per region & year
     - list of unique boy/girl names
-- Feature 1: top 10/20 baby names for given gender/region/period
-- Feature 2: statistics for a particular baby name
+- Consists of 2 parts, organized in 2 tabs
+- Feature 1 (tab 1): top 10/20 baby names for given gender/region/period
+- Feature 2 (tab 2): statistics for a particular baby name
     - name suggestions based on a search term and a string distance calculation
     (see next slide)
     - statistic 1: number of newborns per year
