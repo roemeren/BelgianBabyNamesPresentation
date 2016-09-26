@@ -55,7 +55,7 @@ knit        : slidify::knit2slides
 ```r
 searchTerm <- "John"
 exampleNames <- c("Robert", "John", "Johnny", "Johannes", "Johan", "Sulayman")
-as.vector(adist(searchTerm, exampleNames)) # best matches: John (2) and Johan (5)
+as.vector(adist(searchTerm, exampleNames)) # best matches: John (0) and Johan (1)
 ```
 
 ```
