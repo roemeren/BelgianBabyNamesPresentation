@@ -57,7 +57,7 @@ containing `ui.R` and `server.R`
 ```r
 searchTerm <- "John"
 exampleNames <- c("Robert", "John", "Johnny", "Johannes", "Johan", "Sulayman")
-as.vector(adist("John", exampleNames)) # John (2) and Johan (5) are best matches
+as.vector(adist(searchTerm, exampleNames)) # best matches: John (2) and Johan (5)
 ```
 
 ```

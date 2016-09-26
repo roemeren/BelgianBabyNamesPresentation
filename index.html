@@ -128,7 +128,7 @@ containing <code>ui.R</code> and <code>server.R</code></li>
 
 <pre><code class="r">searchTerm &lt;- &quot;John&quot;
 exampleNames &lt;- c(&quot;Robert&quot;, &quot;John&quot;, &quot;Johnny&quot;, &quot;Johannes&quot;, &quot;Johan&quot;, &quot;Sulayman&quot;)
-as.vector(adist(&quot;John&quot;, exampleNames)) # John (2) and Johan (5) are best matches
+as.vector(adist(searchTerm, exampleNames)) # best matches: John (2) and Johan (5)
 </code></pre>
 
 <pre><code>## [1] 5 0 2 4 1 7
